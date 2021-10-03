@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace RealEstatePMP.Models
 {
@@ -9,9 +11,26 @@ namespace RealEstatePMP.Models
     {
 
         public int AgentId { get; set; }
+
+        [DisplayName("First Name")]
+        [Required]
+        [StringLength(50)]
         public string FirstName { get; set; }
+
+        [DisplayName("Last Name")]
+        [Required]
+        [StringLength(50)]
         public string LastName { get; set; }
+
+        [DisplayName("Mobile Number")]
+        [Phone]
+        [Required]
+        [RegularExpression("\\(?\\d{3}\\)?-? *\\d{3}-? *-?\\d{4}", ErrorMessage = "Please enter valid phone number")]
+
         public string PhoneNumber { get; set; }
+
+        [DisplayName("Years of Experience")]
+
         public int? YearsOfExperience { get; set; }
         public List<Dwelling> Dwellings { get; set; }
         public SalesOffice SalesOffice { get; set; }
