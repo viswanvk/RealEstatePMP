@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using RealEstatePMP.Data;
+using Gtt.Uc.EntityFramework;
 
 namespace RealEstatePMP
 {
@@ -23,6 +26,11 @@ namespace RealEstatePMP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            //  services.AddDbContext<RealEstatePMPContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("RealEstatePMPContext")));
+
+            services.AddGttMem<RealEstatePMPContext>("316a622a-7815-48a2-87f6-9b12f422681a");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

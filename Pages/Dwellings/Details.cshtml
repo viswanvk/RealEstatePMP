@@ -1,0 +1,133 @@
+﻿@page
+@model RealEstatePMP.Pages.Dwellings.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Dwelling</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.ApartmentNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.ApartmentNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Street)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Street)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.CityName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.CityName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.State)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.State)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.ZipCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.ZipCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.NoOfBed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.NoOfBed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.NoOfBath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.NoOfBath)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Dishwasher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Dishwasher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Laundry)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Laundry)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Parking)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Parking)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Availability)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Availability)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.AvailableDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.AvailableDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.UtilitiesIncluded)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.UtilitiesIncluded)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.RentPerMonth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.RentPerMonth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Agent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Agent.AgentId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.City.CityId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.BuildingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.BuildingName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Dwelling.DwellingId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

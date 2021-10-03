@@ -1,0 +1,122 @@
+﻿@page
+@model RealEstatePMP.Pages.Dwellings.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dwelling</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dwelling.ApartmentNumber" class="control-label"></label>
+                <input asp-for="Dwelling.ApartmentNumber" class="form-control" />
+                <span asp-validation-for="Dwelling.ApartmentNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Street" class="control-label"></label>
+                <input asp-for="Dwelling.Street" class="form-control" />
+                <span asp-validation-for="Dwelling.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.CityName" class="control-label"></label>
+                <input asp-for="Dwelling.CityName" class="form-control" />
+                <span asp-validation-for="Dwelling.CityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.State" class="control-label"></label>
+                <input asp-for="Dwelling.State" class="form-control" />
+                <span asp-validation-for="Dwelling.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.ZipCode" class="control-label"></label>
+                <input asp-for="Dwelling.ZipCode" class="form-control" />
+                <span asp-validation-for="Dwelling.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Description" class="control-label"></label>
+                <input asp-for="Dwelling.Description" class="form-control" />
+                <span asp-validation-for="Dwelling.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.NoOfBed" class="control-label"></label>
+                <input asp-for="Dwelling.NoOfBed" class="form-control" />
+                <span asp-validation-for="Dwelling.NoOfBed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.NoOfBath" class="control-label"></label>
+                <input asp-for="Dwelling.NoOfBath" class="form-control" />
+                <span asp-validation-for="Dwelling.NoOfBath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Dishwasher" class="control-label"></label>
+                <input asp-for="Dwelling.Dishwasher" class="form-control" />
+                <span asp-validation-for="Dwelling.Dishwasher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Laundry" class="control-label"></label>
+                <input asp-for="Dwelling.Laundry" class="form-control" />
+                <span asp-validation-for="Dwelling.Laundry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Parking" class="control-label"></label>
+                <input asp-for="Dwelling.Parking" class="form-control" />
+                <span asp-validation-for="Dwelling.Parking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Availability" class="control-label"></label>
+                <input asp-for="Dwelling.Availability" class="form-control" />
+                <span asp-validation-for="Dwelling.Availability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.AvailableDate" class="control-label"></label>
+                <input asp-for="Dwelling.AvailableDate" class="form-control" />
+                <span asp-validation-for="Dwelling.AvailableDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.UtilitiesIncluded" class="control-label"></label>
+                <input asp-for="Dwelling.UtilitiesIncluded" class="form-control" />
+                <span asp-validation-for="Dwelling.UtilitiesIncluded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Price" class="control-label"></label>
+                <input asp-for="Dwelling.Price" class="form-control" />
+                <span asp-validation-for="Dwelling.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.RentPerMonth" class="control-label"></label>
+                <input asp-for="Dwelling.RentPerMonth" class="form-control" />
+                <span asp-validation-for="Dwelling.RentPerMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.AgentId" class="control-label"></label>
+                <select asp-for="Dwelling.AgentId" class ="form-control" asp-items="ViewBag.AgentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.CityId" class="control-label"></label>
+                <select asp-for="Dwelling.CityId" class ="form-control" asp-items="ViewBag.CityId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.BuildingName" class="control-label"></label>
+                <input asp-for="Dwelling.BuildingName" class="form-control" />
+                <span asp-validation-for="Dwelling.BuildingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
