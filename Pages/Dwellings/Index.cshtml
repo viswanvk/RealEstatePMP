@@ -1,0 +1,144 @@
+﻿@page
+@model RealEstatePMP.Pages.Dwellings.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].ApartmentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].NoOfBed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].NoOfBath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Dishwasher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Laundry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Parking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Availability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].AvailableDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].UtilitiesIncluded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].RentPerMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Agent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].BuildingName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dwelling) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApartmentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfBed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfBath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dishwasher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Laundry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Availability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UtilitiesIncluded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentPerMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agent.AgentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.CityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DwellingId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DwellingId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DwellingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
