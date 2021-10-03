@@ -5,9 +5,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create a new dwelling</h1>
 
-<h4>Dwelling</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,6 +22,11 @@
                 <label asp-for="Dwelling.Street" class="control-label"></label>
                 <input asp-for="Dwelling.Street" class="form-control" />
                 <span asp-validation-for="Dwelling.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.BuildingName" class="control-label"></label>
+                <input asp-for="Dwelling.BuildingName" class="form-control" />
+                <span asp-validation-for="Dwelling.BuildingName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.CityName" class="control-label"></label>
@@ -40,7 +45,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.Description" class="control-label"></label>
-                <input asp-for="Dwelling.Description" class="form-control" />
+                <textarea asp-for="Dwelling.Description" class="form-control"></textarea>
                 <span asp-validation-for="Dwelling.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -95,11 +100,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.AgentId" class="control-label"></label>
-                <select asp-for="Dwelling.AgentId" class ="form-control" asp-items="ViewBag.AgentId"></select>
+                <select asp-for="Dwelling.AgentId" class="form-control" asp-items="ViewBag.AgentId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.CityId" class="control-label"></label>
-                <select asp-for="Dwelling.CityId" class ="form-control" asp-items="ViewBag.CityId"></select>
+                <select asp-for="Dwelling.CityId" class="form-control" asp-items="ViewBag.CityId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.BuildingName" class="control-label"></label>

@@ -9,7 +9,6 @@ namespace RealEstatePMP.Models
 {
     public class City
     {
-
         public int CityId { get; set; }
 
         [DisplayName("City")]
@@ -21,6 +20,9 @@ namespace RealEstatePMP.Models
         [Required]
         [StringLength(50)]
         public string State { get; set; }
+
+
+        //RELATIONSHIPS
         public List<Dwelling> Dwellings { get; set; }
 
     }

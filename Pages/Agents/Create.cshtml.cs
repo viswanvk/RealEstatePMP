@@ -21,7 +21,7 @@ namespace RealEstatePMP.Pages.Agents
 
         public IActionResult OnGet()
         {
-        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "SalesOfficeId", "SalesOfficeId");
+        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "SalesOfficeId", "Name");
             return Page();
         }
 

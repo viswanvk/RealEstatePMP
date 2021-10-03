@@ -9,25 +9,27 @@ namespace RealEstatePMP.Models
 {
     public class SalesOffice
     {
-
         public int SalesOfficeId { get; set; }
 
         [DisplayName("Office Name")]
         [Required]
-        [StringLength(50)]
+        [StringLength(200)]
 
         public string Name { get; set; }
 
         [DisplayName("Office Address")]
         [Required]
-        [StringLength(50)]
+        [StringLength(200)]
         public string Address { get; set; }
 
 
         [DisplayName("Establishment Date")]
         [DataType(DataType.Date)]
-        [Required]
         public DateTime? EstablishmentDate { get; set; }
+
+
+
+        //RELATIONSHIPS
         public List<Agent> Agents { get; set; }
 
     }
