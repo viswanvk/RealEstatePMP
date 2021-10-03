@@ -38,8 +38,8 @@ namespace RealEstatePMP.Pages.Dwellings
             {
                 return NotFound();
             }
-           ViewData["AgentId"] = new SelectList(_context.Agent, "AgentId", "AgentId");
-           ViewData["CityId"] = new SelectList(_context.City, "CityId", "CityId");
+           ViewData["AgentId"] = new SelectList(_context.Agent, "AgentId", "FullName");
+           ViewData["CityId"] = new SelectList(_context.City, "CityId", "Name");
             return Page();
         }
 

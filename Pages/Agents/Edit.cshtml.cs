@@ -37,7 +37,7 @@ namespace RealEstatePMP.Pages.Agents
             {
                 return NotFound();
             }
-           ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "SalesOfficeId", "SalesOfficeId");
+           ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "SalesOfficeId", "Name");
             return Page();
         }
 

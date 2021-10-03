@@ -5,10 +5,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Dwelling details</h1>
 
 <div>
-    <h4>Dwelling</h4>
+    
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -111,13 +111,13 @@
             @Html.DisplayNameFor(model => model.Dwelling.Agent)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Dwelling.Agent.AgentId)
+            @Html.DisplayFor(model => model.Dwelling.Agent.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Dwelling.City)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Dwelling.City.CityId)
+            @Html.DisplayFor(model => model.Dwelling.City.Name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Dwelling.BuildingName)

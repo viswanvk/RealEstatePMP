@@ -5,9 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit dwelling</h1>
 
-<h4>Dwelling</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,6 +23,11 @@
                 <label asp-for="Dwelling.Street" class="control-label"></label>
                 <input asp-for="Dwelling.Street" class="form-control" />
                 <span asp-validation-for="Dwelling.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.BuildingName" class="control-label"></label>
+                <input asp-for="Dwelling.BuildingName" class="form-control" />
+                <span asp-validation-for="Dwelling.BuildingName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.CityName" class="control-label"></label>
@@ -41,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.Description" class="control-label"></label>
-                <input asp-for="Dwelling.Description" class="form-control" />
+                <textarea asp-for="Dwelling.Description" class="form-control"></textarea>
                 <span asp-validation-for="Dwelling.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -103,11 +108,6 @@
                 <label asp-for="Dwelling.CityId" class="control-label"></label>
                 <select asp-for="Dwelling.CityId" class="form-control" asp-items="ViewBag.CityId"></select>
                 <span asp-validation-for="Dwelling.CityId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dwelling.BuildingName" class="control-label"></label>
-                <input asp-for="Dwelling.BuildingName" class="form-control" />
-                <span asp-validation-for="Dwelling.BuildingName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

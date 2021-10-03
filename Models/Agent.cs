@@ -9,17 +9,16 @@ namespace RealEstatePMP.Models
 {
     public class Agent
     {
-
         public int AgentId { get; set; }
 
         [DisplayName("First Name")]
         [Required]
-        [StringLength(50)]
+        [StringLength(100)]
         public string FirstName { get; set; }
 
         [DisplayName("Last Name")]
         [Required]
-        [StringLength(50)]
+        [StringLength(100)]
         public string LastName { get; set; }
 
         [DisplayName("Mobile Number")]
@@ -30,11 +29,24 @@ namespace RealEstatePMP.Models
         public string PhoneNumber { get; set; }
 
         [DisplayName("Years of Experience")]
-
         public int? YearsOfExperience { get; set; }
+        public string FullName
+        {
+            get
+            {     // CONCAT FIRST & LAST NAME
+                return $"{FirstName} {LastName}";
+            }
+        }
+
+        //RELATIONSHIPS
+
         public List<Dwelling> Dwellings { get; set; }
         public SalesOffice SalesOffice { get; set; }
+        [DisplayName("Sales office")]
         public int SalesOfficeId { get; set; }
+
+        
+        
 
     }
 }

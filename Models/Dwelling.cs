@@ -11,95 +11,69 @@ namespace RealEstatePMP.Models
 {
     public class Dwelling
     {
-
-        
         public int DwellingId { get; set; }
-
-        [DisplayName("Appartment Name")]
+        [DisplayName("Appartment Number")]
         [Required]
-        [StringLength(50)]
+        [Range(0,50000)]
         public int ApartmentNumber { get; set; }
-
+        [DisplayName("Building Name")]
+        public string? BuildingName { get; set; }
         [DisplayName("Street Name")]
         [Required]
-        [StringLength(50)]
+        [StringLength(100)]
         public string Street { get; set; }
-
         [DisplayName("City Name")]
         [Required]
         [StringLength(50)]
         public string CityName { get; set; }
-
-       
+        [DisplayName("State")]
         [Required]
         [StringLength(20)]
         public string State { get; set; }
-
         [DisplayName("Zip Code")]
         [Required]
-        [StringLength(11)]
         public int ZipCode { get; set; }
-
-
+        [DisplayName("Description")]
+        [Required]
         [StringLength(500)]
         public string Description { get; set; }
-
-        [Required]
         [DisplayName("Number of Bedrooms")]
-        [StringLength(10)]
-
+        [Range(1,20)]
+        [Required]
         public int NoOfBed { get; set; }
-
         [DisplayName("Number of Bathrooms")]
         [Required]
-        [StringLength(10)]
+        [Range(1,20)]
         public int NoOfBath { get; set; }
-
-        [DisplayName("Dishwasher Availble?")]
-        [Required]
-       
-        public bool? Dishwasher { get; set; }
-
-        [DisplayName("Laundry Availble?")]
-        [Required]
-        public bool? Laundry { get; set; }
-
-        [DisplayName("Parking Availble?")]
-        [Required]
-        public bool? Parking { get; set; }
-
-
-        [DisplayName("Parking Availble?")]
-        [Required]
-        public bool? Availability { get; set; }
-
-
+        [DisplayName("Dishwasher Availbility")]
+        public bool Dishwasher { get; set; }
+        [DisplayName("Laundry Availbility")]
+        public bool Laundry { get; set; }
+        [DisplayName("Parking Availbility")]
+        public bool Parking { get; set; }
+        [DisplayName("Utilities Included")]
+        public bool UtilitiesIncluded { get; set; }
+        [DisplayName("Dwelling Availbility")]
+        public bool Availability { get; set; }
         [DisplayName("Available From")]
         [DataType(DataType.Date)]
         [Required]
         public DateTime? AvailableDate { get; set; }
-
-        [DisplayName("Utilities Included ")]
-        [Required]
-        public bool? UtilitiesIncluded { get; set; }
-
-        
+        [DisplayName("Price")]
         public decimal? Price { get; set; }
-
         [DisplayName("Rent Per Month ")]
-        [Required]
         public decimal? RentPerMonth { get; set; }
-
-              public Agent Agent { get; set; }
         
+
+
+
+        //RELATIONSHIPS
+        public Agent Agent { get; set; }
+        [DisplayName("Agent")]
         public int AgentId { get; set; }
-        
-       public City City { get; set; }
-
+        public City City { get; set; }
+        [DisplayName("City")]
         public int CityId { get; set; }
 
-        [DisplayName("Building Name")]
-
-        public string? BuildingName { get; set; }
     }
 }
