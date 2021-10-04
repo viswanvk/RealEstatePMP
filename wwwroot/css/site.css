@@ -151,3 +151,31 @@ body {
 .dropdown5:hover .dropdown-content5 {
     display: block;
 }
+
+/*HomePage Picture*/
+
+.text-center {
+    margin-bottom:40px;
+}
+
+
+
+/*BUY SELL*/
+
+.container .border-top {
+    margin-bottom: 40px;
+}
+
+.container .border-top .btn btn-outline-info {
+    margin-top: 60px;
+    width: 50px;
+}
+
+/*Login Page*/
+form-control form-control-lg {
+    width: 100px;
+    display: inline-block;
+}
+
+/* LOGIN/SIGNUP Page*/
+
