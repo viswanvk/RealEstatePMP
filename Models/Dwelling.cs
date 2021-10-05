@@ -63,8 +63,15 @@ namespace RealEstatePMP.Models
         public decimal? Price { get; set; }
         [DisplayName("Rent Per Month ")]
         public decimal? RentPerMonth { get; set; }
-        
 
+        [DisplayName("Address")]
+        public string FullAddress
+        {
+            get
+            {     // CONCAT FIRST & LAST NAME
+                return $"Apartment#{ApartmentNumber}, {Street}, {CityName}, {State}, {ZipCode}";
+            }
+        }
 
 
         //RELATIONSHIPS

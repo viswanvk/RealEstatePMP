@@ -41,7 +41,10 @@ namespace RealEstatePMP.Models
         //RELATIONSHIPS
 
         public List<Dwelling> Dwellings { get; set; }
+
+        [DisplayName("Sales office")]
         public SalesOffice SalesOffice { get; set; }
+        
         [DisplayName("Sales office")]
         public int SalesOfficeId { get; set; }
 
