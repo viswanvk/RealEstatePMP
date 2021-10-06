@@ -28,7 +28,7 @@ namespace RealEstatePMP.Pages.SalesOffices
                 return NotFound();
             }
 
-            SalesOffice = await _context.SalesOffice.FirstOrDefaultAsync(m => m.SalesOfficeId == id);
+            SalesOffice = await _context.SalesOffice.Include(x => x.Agents).FirstOrDefaultAsync(m => m.SalesOfficeId == id);
 
             if (SalesOffice == null)
             {

@@ -28,9 +28,6 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Dwelling[0].BuildingName)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.Dwelling[0].FullAddress)
                     </th>
                     <!-- Hiding separeate columns for address and making it in one column with full address
@@ -80,6 +77,10 @@
      <th>
         @Html.DisplayNameFor(model => model.Dwelling[0].City)
     </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dwelling[0].BuildingName)
+                    </th>
     End of hide -->
                     <th>
                         @Html.DisplayNameFor(model => model.Dwelling[0].Availability)
@@ -102,9 +103,6 @@
                 @foreach (var item in Model.Dwelling)
                 {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BuildingName)
-                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.FullAddress)
                     </td>
@@ -200,13 +198,4 @@
 
 }
 
-else
-{
-    <div class="row">
-        <div class="col">
-            <div class="alert alert-info">
-                No results match your term <strong>@Model.Query</strong>
-            </div>
-        </div>
-    </div>
-}
+

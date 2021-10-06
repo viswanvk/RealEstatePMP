@@ -8,7 +8,7 @@
 <h1>Sales office details</h1>
 
 <div>
-   
+
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -31,6 +31,37 @@
         </dd>
     </dl>
 </div>
+
+@if (Model.SalesOffice.Agents.Any() == false)
+{
+    <div class="alert alert-info">No agents are present for this Sales Office. <a asp-page="/Agents/create">Please create an agent profile</a></div> }
+else
+{
+    <h4>Agent Details</h4>
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].FullName)</th>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].PhoneNumber)</th>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].YearsOfExperience)</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.SalesOffice.Agents)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.YearsOfExperience)</td>
+                    <td><a asp-page="/Agents/details" asp-route-id="@item.SalesOfficeId">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.SalesOffice.SalesOfficeId">Edit</a> |
     <a asp-page="./Index">Back to List</a>

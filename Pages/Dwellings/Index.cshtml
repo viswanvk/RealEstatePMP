@@ -14,9 +14,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Dwelling[0].BuildingName)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Dwelling[0].FullAddress)
             </th>
             <!-- Hiding separeate columns for address and making it in one column with full address
@@ -41,6 +38,10 @@
             </th>
 
             <!-- Hiding unwanted columns from display
+    <th>
+        @Html.DisplayNameFor(model => model.Dwelling[0].BuildingName)
+    </th>
+
     <th>
         @Html.DisplayNameFor(model => model.Dwelling[0].NoOfBed)
     </th>
@@ -87,9 +88,6 @@
     <tbody>
 @foreach (var item in Model.Dwelling) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuildingName)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FullAddress)
             </td>
