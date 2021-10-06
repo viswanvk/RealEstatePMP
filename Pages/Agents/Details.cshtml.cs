@@ -29,7 +29,7 @@ namespace RealEstatePMP.Pages.Agents
             }
 
             Agent = await _context.Agent
-                .Include(a => a.SalesOffice).FirstOrDefaultAsync(m => m.AgentId == id);
+                .Include(a => a.SalesOffice).Include(x => x.Dwellings).FirstOrDefaultAsync(m => m.AgentId == id);
 
             if (Agent == null)
             {

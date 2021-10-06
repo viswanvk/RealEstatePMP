@@ -8,7 +8,7 @@
 <h1>Details of the agent</h1>
 
 <div>
-    
+
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -43,6 +43,52 @@
         </dd>
     </dl>
 </div>
+
+
+
+@if (Model.Agent.Dwellings.Any() == false)
+{
+    <div class="alert alert-info">No candidate profiles are present for this company. <a asp-page="/Dwellings/create">Please create dwellings</a></div> }
+else
+{
+    <h4>Candidate Details</h4>
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].FullAddress)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].Description)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].Availability)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].AvailableDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].Price)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Agent.Dwellings)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FullAddress)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>
+                    @if (item.Availability)
+                    {
+                        <span class="badge badge-success">Available</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-secondary">Sold Out</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.AvailableDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td><a asp-page="/Dwellings/details" asp-route-id="@item.DwellingId">Details</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Agent.AgentId">Edit</a> |
     <a asp-page="./Index">Back to List</a>
