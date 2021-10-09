@@ -47,9 +47,5 @@ namespace RealEstatePMP.Models
         
         [DisplayName("Sales office")]
         public int SalesOfficeId { get; set; }
-
-        
-        
-
     }
 }
