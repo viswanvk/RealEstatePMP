@@ -52,6 +52,19 @@ namespace RealEstatePMP.Pages.Dwellings
                 return Page();
             }
 
+            //// DATE  VALIDATION
+            //DateTime AvailabilyDate = Dwelling.AvailableDate.Date;
+            //DateTime latestAllowedYear = DateTime.Now;
+            //if (AvailabilyDate.Date == latestAllowedYear.Date)
+            //{
+            //    ModelState.AddModelError("Dwelling.AvailabilityDate", "Please check availability date");
+            //}
+
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+
             _context.Attach(Dwelling).State = EntityState.Modified;
 
             try
@@ -72,6 +85,8 @@ namespace RealEstatePMP.Pages.Dwellings
 
             return RedirectToPage("./Index");
         }
+
+
 
         private bool DwellingExists(int id)
         {

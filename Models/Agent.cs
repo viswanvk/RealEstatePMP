@@ -30,6 +30,8 @@ namespace RealEstatePMP.Models
 
         [DisplayName("Years of Experience")]
         public int? YearsOfExperience { get; set; }
+
+        [DisplayName("Full Name")]
         public string FullName
         {
             get
@@ -37,6 +39,8 @@ namespace RealEstatePMP.Models
                 return $"{FirstName} {LastName}";
             }
         }
+
+        
 
         //RELATIONSHIPS
 

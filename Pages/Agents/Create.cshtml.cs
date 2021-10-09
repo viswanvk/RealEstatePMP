@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using RealEstatePMP.Data;
 using RealEstatePMP.Models;
 
@@ -32,6 +33,21 @@ namespace RealEstatePMP.Pages.Agents
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            //Phone Number Validation
+            var PhoneNum = Agent.PhoneNumber;
+            bool PhoneNumAlreadyExists = await _context.Agent.AnyAsync (x =>x.PhoneNumber == PhoneNum);
+
+            if (PhoneNumAlreadyExists)
+            {
+                ModelState.AddModelError("Agent.PhoneNumber", "Agent with this phone number already exists");
+            }
+
+
             if (!ModelState.IsValid)
             {
                 return Page();

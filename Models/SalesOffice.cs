@@ -28,7 +28,14 @@ namespace RealEstatePMP.Models
         [DataType(DataType.Date)]
         public DateTime? EstablishmentDate { get; set; }
 
-
+        [DisplayName("Office Details")]
+        public string OfficeDetail
+        {
+            get
+            {     // CONCAT FIRST & LAST NAME
+                return $"{Name} - {Address}";
+            }
+        }
 
         //RELATIONSHIPS
         public List<Agent> Agents { get; set; }

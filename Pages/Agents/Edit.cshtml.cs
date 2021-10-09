@@ -50,6 +50,23 @@ namespace RealEstatePMP.Pages.Agents
                 return Page();
             }
 
+            //PhoneNumber Validation
+            var PhoneNum = Agent.PhoneNumber;
+            var currentId = Agent.AgentId;
+            bool PhoneNumAlreadyExists = await _context.Agent.AnyAsync(x => x.PhoneNumber == PhoneNum && x.AgentId != currentId);
+
+            if (PhoneNumAlreadyExists)
+            {
+                ModelState.AddModelError("Agent.PhoneNumber", "Agent with this PhoneNumber already exists");
+            }
+
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+
             _context.Attach(Agent).State = EntityState.Modified;
 
             try

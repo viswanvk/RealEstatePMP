@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using RealEstatePMP.Data;
 using RealEstatePMP.Models;
 
@@ -38,6 +39,21 @@ namespace RealEstatePMP.Pages.Dwellings
                 return Page();
             }
 
+
+            //// DATE VALIDATION
+            //DateTime AvailabilyDate = Dwelling.AvailableDate.Date;
+            //DateTime latestAllowedYear = DateTime.Now.Date;
+            //if (AvailabilyDate <= latestAllowedYear)
+            //{
+            //    ModelState.AddModelError("Dwelling.AvailableDate", "Please check availability date");
+            //}
+
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+
+            
             _context.Dwelling.Add(Dwelling);
             await _context.SaveChangesAsync();
 

@@ -58,7 +58,7 @@ namespace RealEstatePMP.Models
         [DisplayName("Available From")]
         [DataType(DataType.Date)]
         [Required]
-        public DateTime? AvailableDate { get; set; }
+        public DateTime AvailableDate { get; set; }
         [DisplayName("Price")]
         public decimal? Price { get; set; }
         [DisplayName("Rent Per Month ")]
