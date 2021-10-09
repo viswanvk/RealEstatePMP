@@ -22,15 +22,17 @@ namespace RealEstatePMP.Pages
         }
 
 
-        public void OnGet()
-        {
+        //public void OnGet()
+        //{
 
-        }
+        //}
 
         public int TotalAgents { get; set; }
+        public int TotalDwellings { get; set; }
         public async Task OnGetAsync()
         {
             TotalAgents = await _context.Agent.CountAsync();
+            TotalDwellings = await _context.Dwelling.CountAsync();
         }
     }
 }
