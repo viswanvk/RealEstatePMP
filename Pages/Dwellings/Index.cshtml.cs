@@ -19,13 +19,13 @@ namespace RealEstatePMP.Pages.Dwellings
             _context = context;
         }
 
-        public IList<Dwelling> Dwelling { get;set; }
-
+        public IList<Dwelling> Dwelling { get; set; }
         public async Task OnGetAsync()
         {
             Dwelling = await _context.Dwelling
                 .Include(d => d.Agent)
                 .Include(d => d.City).ToListAsync();
         }
-    }
+
+    } 
 }

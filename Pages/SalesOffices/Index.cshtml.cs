@@ -19,11 +19,13 @@ namespace RealEstatePMP.Pages.SalesOffices
             _context = context;
         }
 
+        public int TotalOffices { get; set; }
         public IList<SalesOffice> SalesOffice { get;set; }
-
+        
         public async Task OnGetAsync()
         {
             SalesOffice = await _context.SalesOffice.ToListAsync();
+            TotalOffices = await _context.SalesOffice.CountAsync();
         }
     }
 }

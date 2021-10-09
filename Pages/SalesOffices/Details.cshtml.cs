@@ -21,8 +21,11 @@ namespace RealEstatePMP.Pages.SalesOffices
 
         public SalesOffice SalesOffice { get; set; }
 
+       
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            
+
             if (id == null)
             {
                 return NotFound();
@@ -35,6 +38,9 @@ namespace RealEstatePMP.Pages.SalesOffices
                 return NotFound();
             }
             return Page();
-        }
+
+            
+            
+    }
     }
 }
