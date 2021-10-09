@@ -32,7 +32,7 @@ namespace RealEstatePMP.Pages.Dwellings
             {
                 SearchCompleted = true;
                 Dwelling = await _context.Dwelling
-                .Where(d => d.CityName.StartsWith(query))
+                .Where(d => d.CityName.Equals(query, StringComparison.InvariantCultureIgnoreCase))
                 .ToListAsync();
             }
             else
